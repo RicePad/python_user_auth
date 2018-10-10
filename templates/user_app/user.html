@@ -5,8 +5,12 @@
     <title>USER PAGE & INDEX PAGE</title>
   </head>
   <body>
-    {% block body_block %}
-      <h1>USER.HTML PAGE</h1>
-    {% endblock %}
+   {% if user.is_authenticated %}
+    <li><a href="{% url 'logout' %}"></a></li>
+   {% else %}
+    <li><a href="{% url 'user_app/login' %}"></a></li>
+   {% endif %}
   </body>
+  {% block body_block %}
+  {% endblock %}
 </html>
