@@ -6,11 +6,16 @@
   </head>
   <body>
    {% if user.is_authenticated %}
-    <li><a href="{% url 'logout' %}"></a></li>
-   {% else %}
-    <li><a href="{% url 'user_app/login' %}"></a></li>
+   <ul>
+      <li><a href="{% url 'logout'%}">LOG OUT </a></li>
+     {% else %}
+      <li><a href="{% url 'user_app:login' %}"> LOGIN </a></li>
+      <li><a href="{% url 'user_app:register' %}"> Register </a></li>
+
    {% endif %}
-  </body>
+  </ul>
   {% block body_block %}
   {% endblock %}
+  </body>
+
 </html>
