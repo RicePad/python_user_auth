@@ -1,4 +1,4 @@
-{% extend "user_app/user.html" %}
+{% extends "user_app/user.html" %}
 
 {% block body_block %}
   {% if registered %}
@@ -11,7 +11,7 @@
       {% csrf_token %}
       {{ user_form.as_p }}
       {{ profile_form.as_p }}
-      <input type=submit name="" value="Register">
+      <input type="submit" name="" value="Register">
     </form>
   {% endif %}
 {% endblock %}
